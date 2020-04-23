@@ -1,0 +1,437 @@
+@font-face {
+    font-family: Quicksand;
+    src: url('../fonts/Quicksand-Reguler.ttf');
+}
+
+@font-face {
+    font-family: Quicksand-Bold;
+    src: url('../fonts/Quicksand-Bold.ttf');
+}
+
+/* GENERAL CLASSNAME */
+.bt {
+    display: block;
+    width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+    width: -moz-max-content;    /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
+    padding: 15px 25px;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button {
+    border: none;
+}
+
+.bt-primary {
+    background-image: linear-gradient(180deg,#ff9094,#fc5e63);
+    color: #fff;
+    border: 1px solid transparent;
+    transition: none;
+}
+
+.bt-primary:hover {
+    background-image: none;
+    border-color: #fc5e63;
+    color: #fc5e63;
+}
+
+.bt-secondary {
+    background: rgb(250, 230, 230);
+    color: #fc5e63;
+    border: 1px solid transparent;
+}
+
+.bt-secondary:hover {
+    background: transparent;
+    border-color: #fc5e63;
+}
+
+.bt-default {
+    background: #f3f3f4;
+    border: none;
+}
+
+.bt-default:hover {
+    background: #e7e7e9;
+}
+
+.j-end {
+    justify-content: end;
+}
+
+.f-reverse {
+    flex-direction: row-reverse;
+}
+
+.ml-5 {
+    margin-left: 3em;
+}
+
+.mr-5 {
+    margin-right: 3em;
+}
+
+/* GENERAL ELEMENT */
+* {
+    font-family: Quicksand-Bold;
+}
+
+h1 { font-size: 40px }
+h2 { font-size: 25px }
+
+a , h6 {
+    font-size: 16px;
+    color: #000;
+    line-height: 26px;
+    text-decoration: none;
+}
+
+p {
+    font-family: Quicksand;
+    font-size: 18px;
+    color: #ababab;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+body {
+    margin: 0;
+}
+
+/* navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #fff;
+}
+
+nav > div {
+    display: flex;
+    margin: 0 8%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav > div > a {
+    display: flex;
+    align-items: center;
+}
+
+nav > div > a img {
+    margin-right: .5em;
+}
+
+.nav-link a {
+    display: inline-flex;
+    padding: 20px 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav-link a:hover, .nav-link .active {
+    color: #fc5e63;
+}
+
+.nav-link .bt {
+    margin-left: .75em;
+    padding: 5px 20px;
+}
+
+/* home */
+#home-page header {
+    padding: 5em 8% 0;
+}
+
+#home-page header > div {
+    position: absolute;
+    width: 33%;
+    margin-top: 4em;
+}
+
+#home-page header img {
+    display: block;
+    width: 100%;
+}
+
+#home-page header .bt {
+    margin-top: 3em;
+    box-shadow: 0 4px 11px 0 rgba(37,44,97,.15), 0 1px 3px 0 rgba(93,100,148,.2);
+}
+
+#home-page main > div {
+    margin: 0 8%;
+}
+
+#home-page p {
+    margin: 0;
+}
+
+.home-intro {
+    margin-top: -4em !important;
+    text-align: center;
+}
+
+.home-intro > p {
+    display: inline-block;
+    width: 70%;
+}
+
+.home-intro span  {
+    color: #fc5e63;
+}
+
+.redirect-link {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.home-intro .step-list{
+    margin-top: 3em;
+}
+
+.home-intro .step-list > div {
+    display: flex;
+    align-items: center;
+}
+
+.home-intro .step-list > div img {
+    width: 25%;
+}
+
+.home-intro .step-list > div .bt {
+    margin-top: 2em;
+    padding: 10px 35px;
+}
+
+.home-intro .step-list > div > div {
+    width: 50%;
+    text-align: left;
+}
+
+.home-intro .step-list > div > div > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border: 2px solid #fc5e63;
+    border-radius: 50%;
+}
+
+.home-intro .benefit-list {
+    display: flex;
+    margin-top: 6em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-intro .benefit-list img {
+    width: 45%;
+}
+
+.home-intro .benefit-list > div {
+    width: 50%;
+    text-align: left;
+}
+
+.home-intro .benefit-list > div div {
+    display: flex;
+    margin-top: 1em;
+}
+
+.home-intro .benefit-list p {
+    margin: -2px 0 0 1em !important;
+}
+
+/* permasalahan */
+#permasalahan-page {
+    padding: 6em 8% 0;
+}
+
+/* search bar */
+
+.search {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search .search-title {
+    flex-basis: 30%;
+}
+
+.search .search-title h2 {
+    margin: 0;
+}
+
+.search .search-title h4 {
+    margin: 5px 0;
+    font-family: Quicksand;
+    font-weight: 300;
+}
+
+.search .search-title h4 span {
+    font-size: 20px;
+    color: #fc5e63;
+}
+
+.search .search-input {
+    flex-basis: 65%;
+}
+
+.search .search-input .input-container {
+    display: flex;
+    justify-content: space-between;
+    background: #f3f3f4;
+    border-radius: 35px;
+}
+
+.search .search-input form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    padding-right: 8px;
+}
+
+.search .search-input input {
+    width: 100%;
+    height: 3em;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    color: #6e6d7a;
+} 
+
+.search .search-input input::placeholder {
+    color: #c0c0c0;
+}
+
+.search .search-input input:focus {
+    outline-width: 0;
+}
+
+.search .search-input button {
+    padding: 10px 30px;
+}
+
+.permasalahan-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-end;
+    margin-top: 2em;
+}
+
+.permasalahan-list > div {
+    flex-basis: 24%;
+    margin-bottom: 1em;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+}
+
+.permasalahan-list > div .img {
+    width: 100%;
+    height: 10em;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-size: cover;
+    background-position: center;
+}
+
+.permasalahan-list > div .list-content {
+    padding: 1em;
+}
+
+.permasalahan-list > div .list-content span {
+    display: block;
+    padding: 5px 10px;
+    font-size: 11px;
+    cursor: text;
+}
+
+.permasalahan-list > div .list-content > a {
+    display: block;
+    margin: .5em 0;
+}
+
+.permasalahan-list > div .list-content .action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.permasalahan-list > div .list-content .action .bt {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px 5px 15px;
+    font-size: 12px;
+    border-top-left-radius: 0;
+    font-family: Quicksand;
+}
+
+.permasalahan-list > div .list-content .action p {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    color: rgb(144, 144, 144);
+}
+
+.load-more {
+    display: flex;
+    justify-content: center;
+    padding-top: 3em;
+}
+
+.load-more button {
+    font-family: sans-serif;
+    font-weight: 600;
+    padding: 15px 75px;
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    margin-top: 6em;
+    padding: 2em 8% 5em;
+    background: #f9f9f9;
+}
+
+footer img {
+    width: 75px;
+    height: 75px;
+}
+
+footer div {
+    width: 20%;
+}
+
+footer h6 {
+    margin: 1em 0;
+}
+
+footer a {
+    display: block;
+    margin: 1em 0;
+    font-family: Quicksand;
+    color: #ababab;
+    transition: .2s;
+}
+
+footer a:hover {
+    color: #000;
+}
+
+.footer-logo {
+    width: 30%;
+}
+
