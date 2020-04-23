@@ -13,7 +13,7 @@ export default function Permasalahan() {
                     <h2>Temukan Permasalahan</h2>
                     <h4><span>144</span> hasil ditampilkan</h4>
                 </div>
-                <div className="search-input">
+                {/* <div className="search-input">
                     <div className="input-container">
                         <Search style={{ fontSize: '1.25em', color: '#6e6d7a', margin: '.75em' }} />
                         <form>
@@ -21,7 +21,7 @@ export default function Permasalahan() {
                             <button className="bt bt-primary">Cari</button>
                         </form>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className="permasalahan-list">
                 {/* 1 */}
