@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ExampleImg from '../assets/images/example.jpg'
-import Search from '@material-ui/icons/Search';
+// import Search from '@material-ui/icons/Search';
 import Add from '@material-ui/icons/Add';
 import Calendar from '@material-ui/icons/CalendarToday';
 
@@ -35,7 +35,7 @@ export default function Permasalahan() {
                                 <Calendar style={{color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0'}} />
                                 <p>12 Jan</p>
                             </div>
-                            <a className="bt bt-primary"><Add style={{ fontSize: '15px', margin: '0 8px 1px 0'  }} /> Beri Solusi</a>
+                            <a href="/permasalahan/id/solusi" className="bt bt-primary"><Add style={{ fontSize: '15px', margin: '0 8px 1px 0'  }} /> Beri Solusi</a>
                         </div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ export default function Permasalahan() {
                                 <Calendar style={{color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0'}} />
                                 <p>12 Jan</p>
                             </div>
-                            <a className="bt bt-primary"><Add style={{ fontSize: '15px', margin: '0 8px 1px 0'  }} /> Beri Solusi</a>
+                            <a href="/permasalahan/id/solusi" className="bt bt-primary"><Add style={{ fontSize: '15px', margin: '0 8px 1px 0'  }} /> Beri Solusi</a>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@ export default function Permasalahan() {
                                 <Calendar style={{color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0'}} />
                                 <p>12 Jan</p>
                             </div>
-                            <a className="bt bt-primary"><Add style={{ fontSize: '15px', margin: '0 8px 1px 0'  }} /> Beri Solusi</a>
+                            <a href="/permasalahan/id/solusi" className="bt bt-primary"><Add style={{ fontSize: '15px', margin: '0 8px 1px 0'  }} /> Beri Solusi</a>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ export default function Permasalahan() {
                                 <Calendar style={{color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0'}} />
                                 <p>12 Jan</p>
                             </div>
-                            <a className="bt bt-primary"><Add style={{ fontSize: '15px', margin: '0 8px 1px 0'  }} /> Beri Solusi</a>
+                            <a href="/permasalahan/id/solusi" className="bt bt-primary"><Add style={{ fontSize: '15px', margin: '0 8px 1px 0'  }} /> Beri Solusi</a>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@ export default function Permasalahan() {
                                 <Calendar style={{color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0'}} />
                                 <p>12 Jan</p>
                             </div>
-                            <a className="bt bt-primary"><Add style={{ fontSize: '15px', margin: '0 8px 1px 0'  }} /> Beri Solusi</a>
+                            <a href="/permasalahan/id/solusi" className="bt bt-primary"><Add style={{ fontSize: '15px', margin: '0 8px 1px 0'  }} /> Beri Solusi</a>
                         </div>
                     </div>
                 </div>

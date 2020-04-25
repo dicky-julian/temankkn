@@ -6,7 +6,7 @@ export default function SinglePermasalahan() {
     return (
         <div id="single-permasalahan">
             <div className="article-container">
-                <img src={ExampleImg}/>
+                <img src={ExampleImg} alt=""/>
                 <h1>Minimnya Aksi Dalam Pengelolaan Gabah</h1>
                 <h6>12 Januari 2020</h6>
                 <div>
@@ -24,7 +24,7 @@ export default function SinglePermasalahan() {
                     The United manager said in his pre-match press conference that it was going to be a last-minute decision on whether or not Rashford would travel to Merseyside. Rashford was not with the United squad that arrived 
                     at The Lowry Hotel on Saturday night, having reported at the club's Carrington training complex in the morning.
                 </p>
-                <a className="bt bt-primary-transparent">
+                <a href="/permasalahan/id/solusi" className="bt bt-primary-transparent">
                     Tawarkan Solusi
                 </a>
             </div>

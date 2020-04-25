@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import logoImg from '../assets/images/teman-kkn-logo.png';
+import PersonIcon from '@material-ui/icons/Person';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      status: 0
+    }
+  }
+
   getLocation = () => {
     let location = window.location.pathname;
 
@@ -21,8 +31,38 @@ class Navbar extends Component {
 
   changeHover = (el) => {
     document.querySelectorAll(".active")[0].classList.remove("active");
-    if (el != "") {
+    if (el !== "") {
       document.getElementById(el).classList.add("active");
+    }
+  }
+
+  showSignModal = () => {
+    const modal = document.getElementById("sign");
+    modal.style.display = "flex";
+
+    modal.classList.remove("fade-out");
+    modal.classList.add("fade-in");
+  }
+
+  showDropdown = () => {
+    const dropdown = document.getElementsByClassName("dropdown")[0];
+    let status = this.state.status;
+
+    if (status === 0) {
+      dropdown.classList.remove("dropdown-fade");
+      dropdown.classList.add("dropdown-show");
+      dropdown.style.display = "block";
+
+      this.setState({ status: 1 });
+    } else if (status === 1) {
+      dropdown.classList.remove("dropdown-show");
+      dropdown.classList.add("dropdown-fade");
+
+      setTimeout(function () {
+        dropdown.style.display = "none";
+      }, 300)
+
+      this.setState({ status: 0 });
     }
   }
 
@@ -35,18 +75,25 @@ class Navbar extends Component {
       <nav>
         <div>
           <a href="/" className="d-flex a-center">
-            <img src={logoImg} width="50" /> TemanKKN
+            <img src={logoImg} width="50" alt="" /> TemanKKN
           </a>
           <div>
             <div className="nav-link">
               <a id="home-nav" href="/" className="active">Beranda</a>
               <a id="permasalahan-nav" href="/permasalahan">Permasalahan</a>
-              <a id="tentang-nav">Artikel</a>
-              <a href="/" className="bt bt-secondary">Masuk</a>
+              <a className="bt bt-secondary" onClick={() => this.showSignModal()}>Masuk</a>
+              <a className="bt bt-secondary" href="/permasalahan/add">Laporkan</a>
             </div>
-            <a className="notification-icon">
-              <NotificationsNoneIcon style={{ fontSize: '21px' }} />
-            </a>
+            <div className="bt-dropdown" onClick={() => this.showDropdown()}><PersonIcon /></div>
+
+            <div className="dropdown" style={{ display: 'none' }}>
+              <div>
+                <NotificationsNoneIcon style={{ fontSize: '21px', marginRight: '.75em' }} /> Notifikasi
+              </div>
+              <div>
+                <ExitToAppIcon style={{ fontSize: '21px', marginRight: '.75em' }} /> Logout
+              </div>
+            </div>
           </div>
         </div>
       </nav>

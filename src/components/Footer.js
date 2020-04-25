@@ -10,15 +10,14 @@ export default function Footer() {
 
             <div>
                 <h6>TemanKKN</h6>
-                <a href="">Developer</a>
-                <a href="">Dokumentasi</a>
+                <a href="https://www.linkedin.com/in/dicky-julian/">Developer</a>
+                <a href="https://www.github.com/in/dicky-julian/">Dokumentasi</a>
             </div>
 
             <div>
                 <h6>Tautan</h6>
-                <a href="">Beranda</a>
-                <a href="">Permasalahan</a>
-                <a href="">Artikel</a>
+                <a href="/">Beranda</a>
+                <a href="/permasalahan">Permasalahan</a>
             </div>
         </footer>
     )

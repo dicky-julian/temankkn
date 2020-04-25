@@ -11,9 +11,12 @@
 /* GENERAL CLASSNAME */
 .bt {
     display: block;
-    width: intrinsic;           /* Safari/WebKit uses a non-standard name */
-    width: -moz-max-content;    /* Firefox/Gecko */
-    width: -webkit-max-content; /* Chrome */
+    width: intrinsic;
+    /* Safari/WebKit uses a non-standard name */
+    width: -moz-max-content;
+    /* Firefox/Gecko */
+    width: -webkit-max-content;
+    /* Chrome */
     padding: 15px 25px;
     border-radius: 5px;
     cursor: pointer;
@@ -25,16 +28,12 @@ button {
 }
 
 .bt-primary {
-    background-image: linear-gradient(180deg,#ff9094,#fc5e63);
+    background-color: #ff5f5f;
     color: #fff;
-    border: 1px solid transparent;
-    transition: none;
 }
 
 .bt-primary:hover {
-    background-image: none;
-    border-color: #fc5e63;
-    color: #fc5e63;
+    background-color: #ff8989;
 }
 
 .bt-primary-transparent {
@@ -75,6 +74,15 @@ button {
     color: #fc5e63;
 }
 
+.bt-blue {
+    background-color: #2a75f3;
+    color: #fff;
+}
+
+.bt-blue:hover {
+    background-color: #74a1f0;
+}
+
 .bt-default {
     background: #f3f3f4;
     border: none;
@@ -84,7 +92,8 @@ button {
     background: #e7e7e9;
 }
 
-input[type="text"], textarea {
+input,
+textarea {
     font-size: 16px;
     padding: 10px;
     border: 1px solid #dcdcdc;
@@ -92,7 +101,8 @@ input[type="text"], textarea {
     transition: .3s;
 }
 
-input[type="text"]:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline-width: 0;
     border-color: rgb(255, 202, 202);
 }
@@ -113,15 +123,29 @@ input[type="text"]:focus, textarea:focus {
     margin-right: 3em;
 }
 
+.MuiSvgIcon-root {
+    cursor: pointer;
+}
+
 /* GENERAL ELEMENT */
 * {
     font-family: Quicksand-Bold;
 }
 
-h1 { font-size: 40px }
-h2 { font-size: 25px }
+h1 {
+    font-size: 40px
+}
 
-a , h6 {
+h2 {
+    font-size: 25px
+}
+
+a {
+    cursor: pointer;
+}
+
+a,
+h6 {
     font-size: 16px;
     color: #000;
     line-height: 26px;
@@ -150,58 +174,132 @@ nav {
     background-color: #fff;
 }
 
-nav > div {
+nav>div {
     display: flex;
     margin: 0 8%;
     justify-content: space-between;
     align-items: center;
 }
 
-nav > div > a {
+nav>div>a {
     display: flex;
     align-items: center;
 }
 
-nav > div > a img {
+nav>div>a img {
     margin-right: .5em;
 }
 
-nav > div > div {
+nav>div>div {
     display: flex;
     align-items: center;
 }
 
-.nav-link a {
+.nav-link a, .nav-link div {
     display: inline-flex;
     padding: 20px 15px;
     cursor: pointer;
     transition: .3s;
 }
 
-.nav-link a:hover, .nav-link .active {
+.nav-link a:hover,
+.nav-link .active {
     color: #fc5e63;
 }
 
 .nav-link .bt {
-    margin-left: .75em;
-    padding: 5px 20px;
+    margin: 0 15px;
+    padding: 7px 20px;
 }
 
 .notification-icon {
-    margin: 5px 0 0 1em;
+    margin: 5px 1.5em 0;
     cursor: pointer;
 }
 
+.bt-dropdown {
+    display: flex;
+    width: 2em;
+    height: 2em;
+    margin-left: 15px;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #fc676b;
+    border-radius: 50%;
+    box-shadow: 0 4px 11px 0 rgba(37, 44, 97, .15), 0 1px 3px 0 rgba(93, 100, 148, .2);
+}
+
+.dropdown {
+    top: 65px;
+    right: 3.5%;
+    position: absolute;
+    opacity: 0;
+    background-color: #fff;
+    border: 1px solid rgba(90, 94, 154, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+}
+
+.dropdown div {
+    padding: 15px 30px 15px 15px;
+    display: flex;
+    align-items: center;
+    font-family: Quicksand;
+    border-bottom: 1px solid rgba(90, 94, 154, 0.1);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.dropdown div:hover {
+    background: #f9f9f9;
+}
+
+.dropdown-show {
+    animation-name: showDropdown;
+    animation-duration: .5s;
+    opacity: 1;
+    transition: visibility 0s, opacity 1s linear;
+}
+
+.dropdown-fade {
+    animation-name: fadeDropdown;
+    animation-duration: .25s;
+    opacity: 0;
+    transition: visibility 0s, opacity .25s linear;
+}
+
+@keyframes showDropdown {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 65px;
+    }
+}
+
+@keyframes fadeDropdown {
+    from {
+        top: 65px;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
 /* home */
-#root > div:nth-child(1) {
+#root>div:nth-child(1) {
     padding-left: 8%;
     padding-right: 8%;
 }
+
 #home-page header {
     padding: 5em 0 0;
 }
 
-#home-page header > div {
+#home-page header>div {
     position: absolute;
     width: 33%;
     margin-top: 4em;
@@ -214,7 +312,7 @@ nav > div > div {
 
 #home-page header .bt {
     margin-top: 3em;
-    box-shadow: 0 4px 11px 0 rgba(37,44,97,.15), 0 1px 3px 0 rgba(93,100,148,.2);
+    box-shadow: 0 4px 11px 0 rgba(37, 44, 97, .15), 0 1px 3px 0 rgba(93, 100, 148, .2);
 }
 
 #home-page p {
@@ -226,12 +324,12 @@ nav > div > div {
     text-align: center;
 }
 
-.home-intro > p {
+.home-intro>p {
     display: inline-block;
     width: 70%;
 }
 
-.home-intro span  {
+.home-intro span {
     color: #fc5e63;
 }
 
@@ -240,30 +338,30 @@ nav > div > div {
     text-decoration: underline;
 }
 
-.home-intro .step-list{
+.home-intro .step-list {
     margin-top: 3em;
 }
 
-.home-intro .step-list > div {
+.home-intro .step-list>div {
     display: flex;
     align-items: center;
 }
 
-.home-intro .step-list > div img {
+.home-intro .step-list>div img {
     width: 25%;
 }
 
-.home-intro .step-list > div .bt {
+.home-intro .step-list>div .bt {
     margin-top: 2em;
     padding: 10px 35px;
 }
 
-.home-intro .step-list > div > div {
+.home-intro .step-list>div>div {
     width: 50%;
     text-align: left;
 }
 
-.home-intro .step-list > div > div > span {
+.home-intro .step-list>div>div>span {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -284,12 +382,12 @@ nav > div > div {
     width: 45%;
 }
 
-.home-intro .benefit-list > div {
+.home-intro .benefit-list>div {
     width: 50%;
     text-align: left;
 }
 
-.home-intro .benefit-list > div div {
+.home-intro .benefit-list>div div {
     display: flex;
     margin-top: 1em;
 }
@@ -324,6 +422,7 @@ nav > div > div {
     font-size: 20px;
     color: #fc5e63;
 }
+
 /* 
 .search .search-input {
     flex-basis: 65%;
@@ -375,7 +474,7 @@ nav > div > div {
     margin-top: 2em;
 }
 
-.permasalahan-list > div {
+.permasalahan-list>div {
     flex-basis: 24%;
     margin-bottom: 1em;
     background: #fff;
@@ -383,7 +482,7 @@ nav > div > div {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
 }
 
-.permasalahan-list > div .img {
+.permasalahan-list>div .img {
     width: 100%;
     height: 10em;
     border-top-right-radius: 5px;
@@ -392,30 +491,30 @@ nav > div > div {
     background-position: center;
 }
 
-.permasalahan-list > div .list-content {
+.permasalahan-list>div .list-content {
     padding: 1em;
 }
 
-.permasalahan-list > div .list-content span {
+.permasalahan-list>div .list-content span {
     display: block;
     padding: 5px 10px;
     font-size: 11px;
     cursor: text;
 }
 
-.permasalahan-list > div .list-content > a {
+.permasalahan-list>div .list-content>a {
     display: block;
     margin: .5em 0;
 }
 
-.permasalahan-list > div .list-content .action {
+.permasalahan-list>div .list-content .action {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 1em;
 }
 
-.permasalahan-list > div .list-content .action .bt {
+.permasalahan-list>div .list-content .action .bt {
     display: flex;
     align-items: center;
     padding: 5px 20px 5px 15px;
@@ -425,7 +524,7 @@ nav > div > div {
     font-family: Quicksand;
 }
 
-.permasalahan-list > div .list-content .action p {
+.permasalahan-list>div .list-content .action p {
     display: inline-block;
     font-size: 14px;
     margin: 0;
@@ -478,14 +577,14 @@ nav > div > div {
     color: #000;
 }
 
-.article-container > a {
-    width: 15em; 
+.article-container>a {
+    width: 15em;
     margin-top: 2em;
     float: right;
     text-align: center;
 }
 
-.article-container > div {
+.article-container>div {
     display: flex;
     align-items: center;
     margin: 1em 0 2em;
@@ -513,7 +612,7 @@ nav > div > div {
     justify-content: space-between;
 }
 
-#form-permasalahan .form-header > div {
+#form-permasalahan .form-header>div {
     width: 50%
 }
 
@@ -528,7 +627,7 @@ nav > div > div {
     margin-top: -5em;
 }
 
-#form-permasalahan form > div:nth-child(1) {
+#form-permasalahan form>div:nth-child(1) {
     flex-basis: 65%;
 }
 
@@ -549,7 +648,7 @@ nav > div > div {
     color: #fff;
 }
 
-#form-permasalahan .input-container > div {
+#form-permasalahan .input-container>div {
     width: 90%;
 }
 
@@ -558,7 +657,8 @@ nav > div > div {
     font-size: 18px;
 }
 
-#form-permasalahan input, #form-permasalahan textarea {
+#form-permasalahan input,
+#form-permasalahan textarea {
     width: 100%;
     width: -moz-available;
     width: -webkit-fill-available;
@@ -567,7 +667,8 @@ nav > div > div {
     font-size: 14px;
 }
 
-#form-permasalahan input::placeholder, #form-permasalahan textarea::placeholder {
+#form-permasalahan input::placeholder,
+#form-permasalahan textarea::placeholder {
     color: #b9b9b9;
 }
 
@@ -611,6 +712,201 @@ nav > div > div {
     display: none;
 }
 
+/* Sign or Auth Modal */
+#sign {
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 800;
+}
+
+#sign .bg-fade {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: .9;
+}
+
+#sign .form {
+    width: 29em;
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+#sign .form .MuiSvgIcon-root {
+    float: right;
+    color: rgb(94, 94, 94);
+    transition: .3s;
+}
+
+#sign .form .MuiSvgIcon-root:hover {
+    color: #000;
+}
+
+#sign .form #select-status {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 3em;
+    text-align: center;
+}
+
+#sign button {
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .75px;
+}
+
+#sign label {
+    margin: .6em 0;
+    font-size: 15px;
+    text-align: left;
+}
+
+#sign input {
+    margin-bottom: 1em;
+    background-color: #f3f3f4;
+    border-color: transparent;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    transition: .3s;
+}
+
+#sign input:focus {
+    background-color: transparent;
+    border-color: #ffa1a5;
+}
+
+#sign h2 {
+    width: fit-content;
+    margin: -.9em 0 1.2em;
+}
+
+#sign h6,
+#sign span {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+
+#sign span {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#sign span:hover {
+    text-decoration: underline;
+}
+
+#sign hr {
+    width: 100%;
+    overflow: visible;
+    margin: 2.75em 0 1.75em;
+    padding: 0;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    color: #6e6d7a;
+    text-align: center;
+}
+
+hr.divider:after {
+    content: 'atau';
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    font: normal 14px/14px "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0 16px;
+    background: #fff;
+}
+
+#sign .form-sign {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: -24px;
+    opacity: 0;
+}
+
+#sign .form-sign>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#sign .form-sign>div>div {
+    width: 48%;
+}
+
+#sign .form-sign>div input {
+    width: 92%;
+    margin-top: .6em;
+    padding: 10px 4%;
+}
+
+#sign .form-sign button {
+    padding: 12px 15px;
+    margin: 0 0 1.5em;
+}
+
+#sign .form-sign .daftar {
+    width: 50%;
+    margin: 1em 0 0;
+    max-width: 200px;
+}
+
+/* all sign element animation */
+.fade-in {
+    display: flex !important;
+    opacity: 0;
+    animation-name: showFade;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.fade-out {
+    opacity: 1;
+    animation-name: closeFade;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+@keyframes showFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes closeFade {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 /* footer */
 footer {
     display: flex;
@@ -647,4 +943,3 @@ footer a:hover {
 .footer-logo {
     width: 30%;
 }
-

@@ -19,7 +19,7 @@ class FormPermasalahan extends Component {
                             Hanya beberapa langkah untuk menyelesaikan permasalahan.
                         </p>
                     </div>
-                    <img src={HeaderImg} />
+                    <img src={HeaderImg} alt="" />
                 </div>
                 <form>
                     <div>

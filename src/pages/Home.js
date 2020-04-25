@@ -34,7 +34,7 @@ export default function Home() {
                                 </span>
                                 <h2>Daftarkan Dirimu!</h2>
                                 <p>
-                                    Masuk pada form pendaftaran, dan daftar sebagai <span>mahasiswa</span>, lalu isi data identitas diri dengan sebenar - benarnya. <br/> Bagaimana mendaftar sebagai <span>desa</span>? ikuti tautan <a href="" className="redirect-link">berikut.</a>
+                                    Masuk pada form pendaftaran, dan daftar sebagai <span>mahasiswa</span>, lalu isi data identitas diri dengan sebenar - benarnya. <br/> Bagaimana mendaftar sebagai <span>desa</span>? ikuti tautan <span onClick="" className="redirect-link">berikut.</span>
                                 </p>
                                 <a className="bt bt-secondary" href="/">Daftar Sekarang</a>
                             </div>
