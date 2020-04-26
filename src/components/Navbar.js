@@ -72,7 +72,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav>
+      <nav id="navbar">
         <div>
           <a href="/" className="d-flex a-center">
             <img src={logoImg} width="50" alt="" /> TemanKKN
@@ -82,15 +82,15 @@ class Navbar extends Component {
               <a id="home-nav" href="/" className="active">Beranda</a>
               <a id="permasalahan-nav" href="/permasalahan">Permasalahan</a>
               <a className="bt bt-secondary" onClick={() => this.showSignModal()}>Masuk</a>
-              <a className="bt bt-secondary" href="/permasalahan/add">Laporkan</a>
+              <a className="bt bt-secondary" href="/permasalahan/add">Tambahkan</a>
             </div>
             <div className="bt-dropdown" onClick={() => this.showDropdown()}><PersonIcon /></div>
 
             <div className="dropdown" style={{ display: 'none' }}>
-              <div>
+              <a className="btn" href="/notification">
                 <NotificationsNoneIcon style={{ fontSize: '21px', marginRight: '.75em' }} /> Notifikasi
-              </div>
-              <div>
+              </a>
+              <div className="btn">
                 <ExitToAppIcon style={{ fontSize: '21px', marginRight: '.75em' }} /> Logout
               </div>
             </div>

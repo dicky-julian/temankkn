@@ -3,7 +3,7 @@ import logoImg from '../assets/images/teman-kkn-logo.png'
 
 export default function Footer() {
     return (
-        <footer>
+        <footer id="footer">
             <div className="footer-logo">
                 <img src={logoImg} alt="" />
             </div>

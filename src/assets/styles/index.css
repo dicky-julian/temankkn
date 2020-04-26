@@ -127,6 +127,14 @@ textarea:focus {
     cursor: pointer;
 }
 
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
 /* GENERAL ELEMENT */
 * {
     font-family: Quicksand-Bold;
@@ -241,7 +249,7 @@ nav>div>div {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
 }
 
-.dropdown div {
+.dropdown .btn {
     padding: 15px 30px 15px 15px;
     display: flex;
     align-items: center;
@@ -251,7 +259,7 @@ nav>div>div {
     cursor: pointer;
 }
 
-.dropdown div:hover {
+.dropdown .btn:hover {
     background: #f9f9f9;
 }
 
@@ -423,47 +431,6 @@ nav>div>div {
     color: #fc5e63;
 }
 
-/* 
-.search .search-input {
-    flex-basis: 65%;
-}
-
-.search .search-input .input-container {
-    display: flex;
-    justify-content: space-between;
-    background: #f3f3f4;
-    border-radius: 35px;
-}
-
-.search .search-input form {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: -webkit-fill-available;
-    padding-right: 8px;
-}
-
-.search .search-input input {
-    width: 100%;
-    height: 3em;
-    background: transparent;
-    border: none;
-    font-size: 14px;
-    color: #6e6d7a;
-} 
-
-.search .search-input input::placeholder {
-    color: #c0c0c0;
-}
-
-.search .search-input input:focus {
-    outline-width: 0;
-}
-
-.search .search-input button {
-    padding: 10px 30px;
-} */
-
 .permasalahan-list {
     display: flex;
     justify-content: space-between;
@@ -519,6 +486,7 @@ nav>div>div {
     align-items: center;
     padding: 5px 20px 5px 15px;
     font-size: 12px;
+    line-height: 26px;
     border-radius: 20px;
     border-top-left-radius: 0;
     font-family: Quicksand;
@@ -543,6 +511,13 @@ nav>div>div {
     padding: 15px 75px;
 }
 
+/* modal permasalahan */
+#add-solusi form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 /* single page */
 #single-permasalahan {
     display: flex;
@@ -551,7 +526,7 @@ nav>div>div {
 }
 
 .article-container {
-    width: 60%;
+    width: 45em;
 }
 
 .article-container img {
@@ -713,7 +688,7 @@ nav>div>div {
 }
 
 /* Sign or Auth Modal */
-#sign {
+#sign, #add-solusi {
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -726,7 +701,7 @@ nav>div>div {
     z-index: 800;
 }
 
-#sign .bg-fade {
+#sign .bg-fade, #add-solusi .bg-fade {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -734,7 +709,7 @@ nav>div>div {
     opacity: .9;
 }
 
-#sign .form {
+#sign .form, #add-solusi .form {
     width: 29em;
     padding: 2em;
     background-color: #fff;
@@ -743,13 +718,13 @@ nav>div>div {
     z-index: 1;
 }
 
-#sign .form .MuiSvgIcon-root {
+#sign .form .MuiSvgIcon-root, #add-solusi .form .MuiSvgIcon-root {
     float: right;
     color: rgb(94, 94, 94);
     transition: .3s;
 }
 
-#sign .form .MuiSvgIcon-root:hover {
+#sign .form .MuiSvgIcon-root:hover, #add-solusi .form .MuiSvgIcon-root:hover {
     color: #000;
 }
 
@@ -762,7 +737,7 @@ nav>div>div {
     text-align: center;
 }
 
-#sign button {
+#sign button, #add-solusi button {
     width: 100%;
     font-family: sans-serif;
     font-size: 15px;
@@ -770,13 +745,13 @@ nav>div>div {
     letter-spacing: .75px;
 }
 
-#sign label {
+#sign label, #add-solusi label {
     margin: .6em 0;
     font-size: 15px;
     text-align: left;
 }
 
-#sign input {
+#sign input, #add-solusi textarea, #add-solusi input {
     margin-bottom: 1em;
     background-color: #f3f3f4;
     border-color: transparent;
@@ -786,7 +761,7 @@ nav>div>div {
     transition: .3s;
 }
 
-#sign input:focus {
+#sign input:focus, #add-solusi textarea:focus {
     background-color: transparent;
     border-color: #ffa1a5;
 }
@@ -905,6 +880,146 @@ hr.divider:after {
     to {
         opacity: 0;
     }
+}
+
+/* Notification */
+#notification {
+    display: flex;
+    margin: 0 -9% 0;
+}
+
+.show-status {
+    width: 23em;
+    height: 100vh;
+    box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.12), 0 4px 25px 0 rgba(0, 0, 0, 0.09);
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.show-status .back {
+    margin: 0 1em 1.5em;
+    border-bottom: 1px solid rgba(90, 94, 154, 0.1);
+    padding: 20px 30px 20px 20px;
+    display: flex;
+    align-items: center;
+    font-family: Quicksand;
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.show-status .back:hover {
+    background: transparent;
+}
+
+.show-status .back .MuiSvgIcon-root {
+    font-size: 20px;
+}
+
+.show-status .back .MuiSvgIcon-root {
+    margin-right: 0;
+}
+
+.show-status div {
+    margin: .5em 1em;
+    padding: 20px 30px 20px 20px;
+    display: flex;
+    align-items: center;
+    font-family: Quicksand;
+    border-radius: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.show-status div:hover {
+    background: #f7f7f7;
+}
+
+.show-status .active-status {
+    background: #ff5050;
+    color: #fff;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px #ff50506e;
+}
+
+.show-status .active-status:hover {
+    background: #ff8989;
+}
+
+.show-status div .MuiSvgIcon-root {
+    margin-right: 17px;
+    font-size: 17px;
+}
+
+.show-notification {
+    width: 100%;
+    background: #f6f5f8;
+}
+
+.show-notification > div {
+    width: 90%;
+    height: 100vh;
+    padding: 5%;
+}
+
+.show-notification .container {
+    width: 29em;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+}
+
+.show-notification .container .title {
+    display: flex;
+    align-items: center;
+}
+
+.show-notification .container .title div {
+    display: flex;
+    width: 2.5em;
+    height: 2.5em;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff5050;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.show-notification .container p {
+    margin: .5em 0;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.show-notification .container h6 {
+    width: 25em;
+    margin: 0 1em;
+}
+
+.show-notification .container > p {
+    color: #000;
+}
+
+.show-notification .container .button-container {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.show-notification .container .button-container button {
+    margin-right: .5em;
+    padding: 11px 40px;
+}
+
+.show-notification .container .reject {
+    background: transparent;
+    color: #000;
+}
+
+.show-notification .container .reject:hover {
+    background: #f9f9f9;
 }
 
 /* footer */
