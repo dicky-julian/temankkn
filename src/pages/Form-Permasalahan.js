@@ -46,7 +46,6 @@ class FormPermasalahan extends Component {
                                 <textarea placeholder="Deskripsi ..." rows="5" cols="50"/>
                             </div>
                         </div>
-                        <button className="bt-secondary-reverse" style={{ float: 'right' }}>Kirim</button>
                     </div>
                     <div>
                         <div className="input-image">
@@ -55,6 +54,9 @@ class FormPermasalahan extends Component {
                             <button type="button" className="bt-secondary-reverse" id="button-input-file"><Image /> Upload Image</button>
                             <input type="file" id="input-file"/>
                         </div>
+                    </div>
+                    <div className="btn-container">
+                        <button className="bt-secondary-reverse" style={{ float: 'right' }}>Kirim</button>
                     </div>
                 </form>
             </div>

@@ -337,6 +337,7 @@ nav>div>div .nav-hide {
     display: none;
     margin-left: .5em;
     padding: 20px 15px;
+    font-size: 35px;
 }
 
 /* home */
@@ -626,6 +627,10 @@ nav>div>div .nav-hide {
     padding-top: 6em;
 }
 
+#form-permasalahan h1 {
+    font-size: 35px;
+}
+
 #form-permasalahan .form-header {
     display: flex;
     justify-content: space-between;
@@ -644,9 +649,12 @@ nav>div>div .nav-hide {
     display: flex;
     justify-content: space-between;
     margin-top: -5em;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-end;
 }
 
-#form-permasalahan form>div:nth-child(1) {
+#form-permasalahan form>div:nth-child(1), #form-permasalahan .btn-container {
     flex-basis: 65%;
 }
 
@@ -932,6 +940,17 @@ hr.divider:after {
     margin: 0 -9% 0;
 }
 
+#notification #btn-container {
+    display: none;
+    height: calc(100vh - 2em);
+    position: fixed;
+    top: 0;
+    margin-left: -5px;
+    padding: 1em;
+    background: #fff;
+    box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.12), 0 4px 25px 0 rgba(0, 0, 0, 0.09);
+}
+
 .show-status {
     width: 23em;
     height: 100vh;
@@ -963,6 +982,10 @@ hr.divider:after {
 
 .show-status .back .MuiSvgIcon-root {
     margin-right: 0;
+}
+
+.show-status {
+    background: #fff;
 }
 
 .show-status div {
@@ -1064,6 +1087,38 @@ hr.divider:after {
 
 .show-notification .container .reject:hover {
     background: #f9f9f9;
+}
+
+#notification .notif-show {
+    animation-name: showNotif;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+#notification .notif-hide {
+    animation-name: hideNotif;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showNotif {
+    from {
+        left: -23em;
+    }
+
+    to {
+        left: 55px;
+    }
+}
+
+@keyframes hideNotif {
+    from {
+        left: 55px;
+    }
+
+    to {
+        left: -23em;
+    }
 }
 
 /* footer */

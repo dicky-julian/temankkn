@@ -3,13 +3,15 @@ import Assignment from '@material-ui/icons/Assignment';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import MahasiswaNotification from '../components/Notification/Mahasiswa';
 import DesaNotification from '../components/Notification/Desa';
+import MenuIcon from '@material-ui/icons/Menu';
 
 class Notification extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            status: 'mahasiswa',
+            status: 'desa',
+            numSidebar: 0,
             statusNotifications: {
                 mahasiswa: [
                     "Permintaan", "Disetujui", "Ditolak", "Selesai"
@@ -28,6 +30,23 @@ class Notification extends Component {
             this.statusNotifications = this.state.statusNotifications.mahasiswa;
         } else if (status === "desa") {
             this.statusNotifications = this.state.statusNotifications.desa;
+        }
+    }
+
+    showSidebar =() => {
+        const sidebar = document.getElementsByClassName("show-status")[0];
+        let status = this.state.numSidebar;
+
+        if (status === 0) {
+            sidebar.classList.remove("notif-hide");
+            sidebar.classList.add("notif-show");
+
+        this.setState({ numSidebar: 1 });
+        } else if (status === 1) {
+            sidebar.classList.remove("notif-show");
+            sidebar.classList.add("notif-hide");
+
+        this.setState({ numSidebar: 0 });
         }
     }
 
@@ -63,6 +82,7 @@ class Notification extends Component {
         this.getStatusNotifications();
         return (
             <div id="notification">
+                <div id="btn-container"><MenuIcon onClick={() => this.showSidebar()} /></div>
                 <div className="show-status">
                     <a className="back" href={document.referrer}>
                         <ArrowBackIcon />

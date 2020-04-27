@@ -114,7 +114,7 @@ class Navbar extends Component {
               </div>
             </div>
 
-            <MenuIcon id="nav-toogle" style={{ fontSize: '35px' }} onClick={() => this.showNavbar()} />
+            <MenuIcon id="nav-toogle" onClick={() => this.showNavbar()} />
           </div>
         </div>
       </nav>
