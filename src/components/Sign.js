@@ -119,7 +119,7 @@ class Sign extends Component {
                         <input type="email" />
 
                         <label>Password</label>
-                        <input type="password" />
+                        <input type="password" autoComplete="true" />
 
                         <button className="bt bt-primary daftar" type="submit">Daftar</button>
                         <hr className="divider"></hr>
@@ -144,7 +144,7 @@ class Sign extends Component {
                         <input type="email" />
 
                         <label>Password</label>
-                        <input type="password" />
+                        <input type="password" autoComplete="true" />
 
                         <button className="bt bt-primary daftar" type="submit">Daftar</button>
                         <hr className="divider"></hr>
@@ -159,7 +159,7 @@ class Sign extends Component {
                         <input type="email" />
 
                         <label>Password</label>
-                        <input type="password" />
+                        <input type="password" autoComplete="true" />
 
                         <button className="bt bt-primary daftar" type="submit">Masuk</button>
                         <hr className="divider"></hr>

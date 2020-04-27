@@ -1,0 +1,128 @@
+@media screen and (max-width: 1100px) {
+    /* Home */
+    #home-page header img {
+        margin-top: 4em;
+    }
+    #home-page header>div {
+        margin-top: 1em;
+    }
+    .home-intro .step-list>div>div {
+        width: 75%;
+    }
+    .home-intro>p {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    /* Navbar  */
+    #root>div:nth-child(1) {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    nav>div {
+        margin: 0 5%;
+    }
+    nav>div>div{
+        width: 200px;
+        justify-content: flex-end;
+    }
+    .nav-link {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        height: calc(100% - 75px);
+        position: fixed;
+        top: 76px;
+        right: -250px;
+        background: #fff;
+        border-left: 1px solid rgba(90, 94, 154, 0.1);
+    }
+    .nav-link a, .nav-link .bt {
+        margin-left: 0;
+        padding: 20px 30px 10px;
+        background: transparent;
+        color: #000;
+        border: 0;
+    }
+    .nav-link .bt:hover {
+        color: #fc5e63;
+    }
+    #nav-toogle {
+        display: block;
+    }
+    /* Home */
+    #home-page header img {
+        width: 110%;
+        height: 35em;
+        margin: 11em -5% 0;
+        object-fit: cover;
+        object-position: 50% 0;
+    }
+    #home-page header>div {
+        width: 90%;
+    }
+    .home-intro .benefit-list {
+        display: block;
+    }
+    .home-intro .benefit-list img {
+        width: 24em;
+        margin: 1em 0;
+        transform: rotate(-18deg);
+    }
+    .home-intro .benefit-list>div {
+        width: 100%;
+        text-align: center;
+    }
+    .home-intro .benefit-list>div div {
+        display: block;
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    /* Home */
+    h1 {
+        font-size: 35px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .home-intro .step-list>div {
+        display: block;
+    }
+    .home-intro .step-list>div img {
+        width: 50%;
+        margin: 0;
+    }
+    .home-intro .step-list>div .bt {
+        margin: 2em auto 3em;
+    }
+    .home-intro .step-list>div>div {
+        width: 100%;
+        text-align: center;
+    }
+    .home-intro .step-list>div>div>span {
+        margin: 1em auto 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* Navbar */
+    .bt-dropdown {
+        width: 2em;
+        height: 2em;
+    }
+    /* Home */
+    #home-page header img {
+        width: 110%;
+        height: 30em;
+        margin: 12em -5% 0;
+        object-fit: cover;
+        object-position: 50% 0;
+    }
+    .home-intro .benefit-list img {
+        width: 90%;
+    }
+}
