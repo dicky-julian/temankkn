@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { session } from './config';
 
 // Pages Import
 import Home from './pages/Home';
@@ -12,15 +13,9 @@ import Error404 from './pages/404';
 class Router extends Component {
 
   render() {
-    const isLoggedIn = false;
-    
     return (
       <div>
-        {isLoggedIn ?
-          <Switch>
-            <Route path="*" component={Home} />
-          </Switch>
-          :
+        {session !== null ?
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/permasalahan" component={Permasalahan} />
@@ -28,6 +23,10 @@ class Router extends Component {
             <Route exact path="/permasalahan/add" component={FormPermasalahan} />
             <Route exact path="/notification" component={Notification} />
             <Route path="*" component={Error404} />
+          </Switch>
+          :
+          <Switch>
+            <Route path="*" component={Home} />
           </Switch>
         }
       </div>

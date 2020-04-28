@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { statusSession } from '../config';
+
 import Assignment from '@material-ui/icons/Assignment';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import MahasiswaNotification from '../components/Notification/Mahasiswa';
@@ -10,7 +12,6 @@ class Notification extends Component {
         super(props);
 
         this.state = {
-            status: 'desa',
             numSidebar: 0,
             statusNotifications: {
                 mahasiswa: [
@@ -24,11 +25,9 @@ class Notification extends Component {
     }
 
     getStatusNotifications() {
-        const status = this.state.status;
-
-        if (status === "mahasiswa") {
+        if (statusSession === "mahasiswa") {
             this.statusNotifications = this.state.statusNotifications.mahasiswa;
-        } else if (status === "desa") {
+        } else if (statusSession === "desa") {
             this.statusNotifications = this.state.statusNotifications.desa;
         }
     }
@@ -92,7 +91,7 @@ class Notification extends Component {
                     })}
                 </div>
                 <div className="show-notification">
-                    {this.state.status === "mahasiswa" ?
+                    {statusSession === "mahasiswa" ?
                         <MahasiswaNotification /> : <DesaNotification />
                     }
                 </div>

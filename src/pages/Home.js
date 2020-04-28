@@ -24,14 +24,14 @@ class Home extends Component {
                     <div>
                         <h1>Inovasi Untuk Solusi</h1>
                         <p>The friendly and free way for fans to support your work for the price of a coffee. Get paid directly with 0% fees from Ko-fi.</p>
-                        <a href="/" className="bt bt-primary">Temukan Permasalahan</a>
+                        <a href="/permasalahan" className="bt bt-primary">Temukan Permasalahan</a>
                     </div>
                     <img src={headerImg} alt="" />
                 </header>
                 <main>
                     <div className="home-intro">
-                        <h1>Apa itu TemanKKN ?</h1>
-                        <p>TemanKKN adalah platform digital yang bertujuan untuk memudahkan mahasiswa dalam menemukan permasalahan, dimana merupakan salah satu unsur penting dalam kegiatan Kuliah Kerja Nyata (KKN). <span>Lalu bagaimana cara kerjanya?</span></p>
+                        <h1>Apa itu KawanKKN ?</h1>
+                        <p>KawanKKN adalah platform digital yang bertujuan untuk memudahkan mahasiswa dalam menemukan permasalahan, dimana merupakan salah satu unsur penting dalam kegiatan Kuliah Kerja Nyata (KKN). <span>Lalu bagaimana cara kerjanya?</span></p>
 
                         {/* STEP LIST */}
                         <div className="step-list">
@@ -79,17 +79,17 @@ class Home extends Component {
                         <div className="benefit-list f-reverse">
                             <img src={benefitImg} alt="" />
                             <div>
-                                <h1>Bagaimana TemanKKN Membantu?</h1>
+                                <h1>Bagaimana KawanKKN Membantu?</h1>
                                 <div>
                                     <CheckCircle style={{ color: '#fc5e63' }} />
                                     <p>
-                                        <span>TemanKKN</span> berkomitmen mendukung kegiatan Kuliah Kerja Nyata(KKN) dengan memudahkan insitusi/universitas dan mahasiswa dalam menentukan objek pelaksanaan KKN.
+                                        <span>KawanKKN</span> berkomitmen mendukung kegiatan Kuliah Kerja Nyata(KKN) dengan memudahkan insitusi/universitas dan mahasiswa dalam menentukan objek pelaksanaan KKN.
                                     </p>
                                 </div>
                                 <div>
                                     <CheckCircle style={{ color: '#fc5e63' }} />
                                     <p>
-                                        Tidak hanya itu, <span>TemanKKN</span> juga berupaya menjangkau setiap daerah dengan memfasilitasi perangkat desa untuk menceritakan permasalahan yang terjadi di daerahnya,
+                                        Tidak hanya itu, <span>KawanKKN</span> juga berupaya menjangkau setiap daerah dengan memfasilitasi perangkat desa untuk menceritakan permasalahan yang terjadi di daerahnya,
                                         sehingga mampu membuka peluang adanya bantuan tenaga hingga ide dari institusi ataupun mahasiswa melalui kegiatan Kuliah Kerja Nyata(KKN).
                                     </p>
                                 </div>

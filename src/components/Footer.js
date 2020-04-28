@@ -9,7 +9,7 @@ export default function Footer() {
             </div>
 
             <div>
-                <h6>TemanKKN</h6>
+                <h6>KawanKKN</h6>
                 <a href="https://www.linkedin.com/in/dicky-julian/">Developer</a>
                 <a href="https://www.github.com/in/dicky-julian/">Dokumentasi</a>
             </div>

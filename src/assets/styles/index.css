@@ -942,11 +942,11 @@ hr.divider:after {
 
 #notification #btn-container {
     display: none;
-    height: calc(100vh - 2em);
     position: fixed;
     top: 0;
-    margin-left: -5px;
-    padding: 1em;
+    left: 0;
+    right: 0;
+    padding: 1em 1.3em;
     background: #fff;
     box-shadow: 0 10px 20px -12px rgba(0, 0, 0, 0.12), 0 4px 25px 0 rgba(0, 0, 0, 0.09);
 }
@@ -1107,13 +1107,13 @@ hr.divider:after {
     }
 
     to {
-        left: 55px;
+        left: 0;
     }
 }
 
 @keyframes hideNotif {
     from {
-        left: 55px;
+        left: 0;
     }
 
     to {

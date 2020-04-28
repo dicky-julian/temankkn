@@ -1,23 +1,64 @@
 import React, { Component } from 'react';
+import { getAuth, createAuth } from '../config';
 import CloseIcon from '@material-ui/icons/Close';
 
 class Sign extends Component {
-    constructor(props) {
-        super(props);
+    signIn = (e) => {
+        e.preventDefault();
 
-        this.state = {
-            email: '',
-            password: '',
-            status: '',
-            mahasiswa: {
-                nama: '',
-                universitas: ''
-            },
-            desa: {
-                nama: '',
-                alamat: ''
-            }
+        let dataUser = {
+            email : this.refs.email.value,
+            password : this.refs.password.value
         }
+
+        if (!dataUser.email || !dataUser.password) {
+            console.log('data tidak boleh');
+            return '';
+            // redirect with alert
+        }
+        
+        getAuth(dataUser);
+    }
+
+    signUpMahasiswa = (e) => {
+        e.preventDefault();
+
+        let dataUser = {
+            username: this.refs.usernameMahasiswa.value,
+            email : this.refs.emailMahasiswa.value,
+            password : this.refs.passwordMahasiswa.value,
+            address : this.refs.addressMahasiswa.value,
+            status: "mahasiswa"
+        }
+
+        if (!dataUser.username || !dataUser.email || !dataUser.password || !dataUser.address) {
+            console.log('data tidak boleh');
+            return '';
+            // redirect with alert
+        }
+
+        createAuth(dataUser);
+    }
+
+    signUpDesa = (e) => {
+        e.preventDefault();
+
+        let dataUser = {
+            username: this.refs.usernameDesa.value,
+            email : this.refs.emailDesa.value,
+            password : this.refs.passwordDesa.value,
+            address : this.refs.addressDesa.value,
+            status: "desa"
+        }
+        console.log(dataUser);
+
+        if (!dataUser.username || !dataUser.email || !dataUser.password || !dataUser.address) {
+            console.log('data tidak boleh');
+            return '';
+            // redirect with alert
+        }
+
+        createAuth(dataUser);
     }
 
     closeModal = () => {
@@ -102,24 +143,24 @@ class Sign extends Component {
                     </div>
 
                     {/* signup mahasiswa */}
-                    <form id="signup-mahasiswa" className="form-sign">
+                    <form onSubmit={this.signUpMahasiswa} id="signup-mahasiswa" className="form-sign">
                         <h2>Registrasi Mahasiswa</h2>
                         <div>
                             <div>
                                 <label>Nama Lengkap</label>
-                                <input type="text" />
+                                <input type="text" ref="usernameMahasiswa" />
                             </div>
                             <div>
                                 <label>Asal Universitas</label>
-                                <input type="text" />
+                                <input type="text" ref="addressMahasiswa" />
                             </div>
                         </div>
 
                         <label>Alamat Email</label>
-                        <input type="email" />
+                        <input type="email" ref="emailMahasiswa" />
 
                         <label>Password</label>
-                        <input type="password" autoComplete="true" />
+                        <input type="password" autoComplete="true" ref="passwordMahasiswa" />
 
                         <button className="bt bt-primary daftar" type="submit">Daftar</button>
                         <hr className="divider"></hr>
@@ -127,24 +168,24 @@ class Sign extends Component {
                     </form>
 
                     {/* signup desa */}
-                    <form id="signup-desa" className="form-sign">
+                    <form onSubmit={this.signUpDesa} id="signup-desa" className="form-sign">
                         <h2>Registrasi Desa</h2>
                         <div>
                             <div>
                                 <label>Nama Desa</label>
-                                <input type="text" />
+                                <input type="text" ref="usernameDesa" />
                             </div>
                             <div>
-                                <label>Alamat Desa</label>
-                                <input type="text" />
+                                <label>Lokasi Desa</label>
+                                <input type="text" ref="addressDesa" />
                             </div>
                         </div>
 
                         <label>Alamat Email</label>
-                        <input type="email" />
+                        <input type="email" ref="emailDesa" />
 
                         <label>Password</label>
-                        <input type="password" autoComplete="true" />
+                        <input type="password" ref="passwordDesa" autoComplete="true" />
 
                         <button className="bt bt-primary daftar" type="submit">Daftar</button>
                         <hr className="divider"></hr>
@@ -152,14 +193,14 @@ class Sign extends Component {
                     </form>
 
                     {/* login */}
-                    <form id="signin" className="form-sign">
+                    <form onSubmit={this.signIn} id="signin" className="form-sign">
                         <h2>Autentikasi Masuk</h2>
 
                         <label>Alamat Email</label>
-                        <input type="email" />
+                        <input type="email" ref="email" />
 
                         <label>Password</label>
-                        <input type="password" autoComplete="true" />
+                        <input type="password" autoComplete="true" ref="password" />
 
                         <button className="bt bt-primary daftar" type="submit">Masuk</button>
                         <hr className="divider"></hr>

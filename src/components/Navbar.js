@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { session, statusSession, logoutAuth } from '../config';
+
 import logoImg from '../assets/images/teman-kkn-logo.png';
 import PersonIcon from '@material-ui/icons/Person';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
@@ -94,28 +96,40 @@ class Navbar extends Component {
       <nav id="navbar">
         <div>
           <a href="/" className="d-flex a-center">
-            <img src={logoImg} width="50" alt="" /> TemanKKN
+            <img src={logoImg} width="50" alt="" /> KawanKKN
           </a>
-          <div>
-            <div className="nav-link">
-              <a id="home-nav" href="/" className="active">Beranda</a>
-              <a id="permasalahan-nav" href="/permasalahan">Permasalahan</a>
-              <div className="bt bt-secondary" onClick={() => this.showSignModal()}>Masuk</div>
-              <a className="bt bt-secondary" href="/permasalahan/add">Tambahkan</a>
-            </div>
-            <div className="bt-dropdown" onClick={() => this.showDropdown()}><PersonIcon /></div>
-
-            <div className="dropdown" style={{ display: 'none' }}>
-              <a className="btn" href="/notification">
-                <NotificationsNoneIcon style={{ fontSize: '21px', marginRight: '.75em' }} /> Notifikasi
-              </a>
-              <div className="btn">
-                <ExitToAppIcon style={{ fontSize: '21px', marginRight: '.75em' }} /> Logout
+          {session !== null ?
+            <div>
+              <div className="nav-link">
+                <a id="home-nav" href="/" className="active">Beranda</a>
+                <a id="permasalahan-nav" href="/permasalahan">Permasalahan</a>
+                {statusSession === "mahasiswa" ?
+                  <i></i>
+                  :
+                  <a className="bt bt-secondary" href="/permasalahan/add">Tambahkan</a>
+                }
               </div>
+              <div className="bt-dropdown" onClick={() => this.showDropdown()}><PersonIcon /></div>
+              <div className="dropdown" style={{ display: 'none' }}>
+                <a className="btn" href="/notification">
+                  <NotificationsNoneIcon style={{ fontSize: '21px', marginRight: '.75em' }} /> Notifikasi
+                </a>
+                <div className="btn" onClick={logoutAuth}>
+                  <ExitToAppIcon style={{ fontSize: '21px', marginRight: '.75em' }} /> Logout
+                </div>
+              </div>
+              <MenuIcon id="nav-toogle" onClick={() => this.showNavbar()} />
             </div>
-
-            <MenuIcon id="nav-toogle" onClick={() => this.showNavbar()} />
-          </div>
+            :
+            <div>
+              <div className="nav-link">
+                <a id="home-nav" href="/" className="active">Beranda</a>
+                <a id="permasalahan-nav" onClick={() => alert("Silahkan masuk terlebih dahulu untuk melanjutkan")}>Permasalahan</a>
+                <div className="bt bt-secondary" onClick={() => this.showSignModal()}>Masuk</div>
+              </div>
+              <MenuIcon id="nav-toogle" onClick={() => this.showNavbar()} />
+            </div>
+          }
         </div>
       </nav>
     );
