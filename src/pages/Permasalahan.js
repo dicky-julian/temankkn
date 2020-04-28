@@ -1,12 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { database } from '../config';
 
-import ExampleImg from '../assets/images/example.jpg'
+import ExampleImg from '../assets/images/example.jpg';
 // import Search from '@material-ui/icons/Search';
 import Add from '@material-ui/icons/Add';
 import Calendar from '@material-ui/icons/CalendarToday';
 import CloseIcon from '@material-ui/icons/Close';
 
 class Permasalahan extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            problems: []
+        }
+    }
+
     closeModal = () => {
         const modal = document.getElementById("add-solusi");
 
@@ -26,7 +35,44 @@ class Permasalahan extends Component {
         modal.classList.add("fade-in");
     }
 
+    getProblems = () => {
+        var problems = database.ref('problems');
+
+        problems.on("value",
+        (snapshot) =>{
+            console.log(Object.entries(snapshot.val()));
+            this.setState({ problems: Object.entries(snapshot.val())})
+        })
+    }
+
+    componentWillMount() {
+        this.getProblems()
+    }
+
     render() {
+        let problems = this.state.problems;
+        let items = [];
+
+        for (let i = 0; i < problems.length; i++) {
+            let detailProblem = problems[i][1];
+            console.log(detailProblem.imgSource);
+            items.push(
+            <div key={i}>
+                <div className="img" style={{ backgroundImage: `url("${detailProblem.imgSource}")` }}></div>
+                <div className="list-content">
+                    <span className="bt bt-secondary">{detailProblem.address}</span>
+                    <a href="/">{detailProblem.title}</a>
+                    <div className="action">
+                        <div className="date">
+                            <Calendar style={{ color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0' }} />
+                            <p>{detailProblem.date}</p>
+                        </div>
+                        <button className="bt bt-primary" onClick={() => this.showModal()}><Add style={{ fontSize: '15px', margin: '0 8px 1px 0' }} /> Beri Solusi</button>
+                    </div>
+                </div>
+            </div>
+            )
+        }
         return (
             <div id="permasalahan-page">
                 <div className="search">
@@ -36,81 +82,7 @@ class Permasalahan extends Component {
                     </div>
                 </div>
                 <div className="permasalahan-list">
-                    {/* 1 */}
-                    <div>
-                        <div className="img" style={{ backgroundImage: `url(${ExampleImg})` }}></div>
-                        <div className="list-content">
-                            <span className="bt bt-secondary">Malang - Jawa Timur</span>
-                            <a href="/">Minimnya Aksi Dalam Pengelolaan Gabah</a>
-                            <div className="action">
-                                <div className="date">
-                                    <Calendar style={{ color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0' }} />
-                                    <p>12 Jan</p>
-                                </div>
-                                <button className="bt bt-primary" onClick={() => this.showModal()}><Add style={{ fontSize: '15px', margin: '0 8px 1px 0' }} /> Beri Solusi</button>
-                            </div>
-                        </div>
-                    </div>
-                    {/* 2 */}
-                    <div>
-                        <div className="img" style={{ backgroundImage: `url(${ExampleImg})` }}></div>
-                        <div className="list-content">
-                            <span className="bt bt-secondary">Malang - Jawa Timur</span>
-                            <a href="/">Minimnya Aksi Dalam Pengelolaan Gabah</a>
-                            <div className="action">
-                                <div className="date">
-                                    <Calendar style={{ color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0' }} />
-                                    <p>12 Jan</p>
-                                </div>
-                                <button className="bt bt-primary" onClick={() => this.showModal()}><Add style={{ fontSize: '15px', margin: '0 8px 1px 0' }} /> Beri Solusi</button>
-                            </div>
-                        </div>
-                    </div>
-                    {/* 3 */}
-                    <div>
-                        <div className="img" style={{ backgroundImage: `url(${ExampleImg})` }}></div>
-                        <div className="list-content">
-                            <span className="bt bt-secondary">Malang - Jawa Timur</span>
-                            <a href="/">Minimnya Aksi Dalam Pengelolaan Gabah</a>
-                            <div className="action">
-                                <div className="date">
-                                    <Calendar style={{ color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0' }} />
-                                    <p>12 Jan</p>
-                                </div>
-                                <button className="bt bt-primary" onClick={() => this.showModal()}><Add style={{ fontSize: '15px', margin: '0 8px 1px 0' }} /> Beri Solusi</button>
-                            </div>
-                        </div>
-                    </div>
-                    {/* 4 */}
-                    <div>
-                        <div className="img" style={{ backgroundImage: `url(${ExampleImg})` }}></div>
-                        <div className="list-content">
-                            <span className="bt bt-secondary">Malang - Jawa Timur</span>
-                            <a href="/">Minimnya Aksi Dalam Pengelolaan Gabah</a>
-                            <div className="action">
-                                <div className="date">
-                                    <Calendar style={{ color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0' }} />
-                                    <p>12 Jan</p>
-                                </div>
-                                <button className="bt bt-primary" onClick={() => this.showModal()}><Add style={{ fontSize: '15px', margin: '0 8px 1px 0' }} /> Beri Solusi</button>
-                            </div>
-                        </div>
-                    </div>
-                    {/* 5 */}
-                    <div>
-                        <div className="img" style={{ backgroundImage: `url(${ExampleImg})` }}></div>
-                        <div className="list-content">
-                            <span className="bt bt-secondary">Malang - Jawa Timur</span>
-                            <a href="/">Minimnya Aksi Dalam Pengelolaan Gabah</a>
-                            <div className="action">
-                                <div className="date">
-                                    <Calendar style={{ color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0' }} />
-                                    <p>12 Jan</p>
-                                </div>
-                                <button className="bt bt-primary" onClick={() => this.showModal()}><Add style={{ fontSize: '15px', margin: '0 8px 1px 0' }} /> Beri Solusi</button>
-                            </div>
-                        </div>
-                    </div>
+                    {items}
                 </div>
 
                 <div className="load-more">

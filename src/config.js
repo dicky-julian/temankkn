@@ -43,7 +43,6 @@ export const getAuth = (dataUser) => {
             var ref = database.ref('users/' + user.uid);
 
             ref.on("value", function (snapshot) {
-                console.log(snapshot.val().status);
                 createSession(user.uid, snapshot.val().status, snapshot.val().address);
                 auth.signOut().then(function () {
                     console.log("success logout");

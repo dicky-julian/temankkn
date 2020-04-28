@@ -9,7 +9,10 @@ class FormPermasalahan extends Component {
         super(props);
 
         this.state = {
-            imageAsFile: ''
+            imageAsFile: '',
+            month: [
+                'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Dev'
+            ]
         }
     }
 
@@ -47,12 +50,13 @@ class FormPermasalahan extends Component {
                             return '';
                         }
                 
-                        database.ref('problems/' + session).set({
-                            id: session + timeNow,
+                        database.ref('problems/' + session + timeNow).set({
                             title: title,
                             description: description,
                             imgSource: firebaseUrl,
                             idUser: session,
+                            address: address,
+                            date: `${new Date().getDate()} ${this.state.month[new Date().getMonth()]}`,
                             status: 1
                         })
 
