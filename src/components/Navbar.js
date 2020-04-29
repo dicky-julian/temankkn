@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { session, statusSession, logoutAuth } from '../config';
+import { showError } from '../App';
 
 import logoImg from '../assets/images/teman-kkn-logo.png';
 import PersonIcon from '@material-ui/icons/Person';
@@ -124,7 +125,7 @@ class Navbar extends Component {
             <div>
               <div className="nav-link">
                 <a id="home-nav" href="/" className="active">Beranda</a>
-                <a id="permasalahan-nav" onClick={() => alert("Silahkan masuk terlebih dahulu untuk melanjutkan")}>Permasalahan</a>
+                <a id="permasalahan-nav" onClick={() => showError("Silahkan masuk terlebih dahulu")}>Permasalahan</a>
                 <div className="bt bt-secondary" onClick={() => this.showSignModal()}>Masuk</div>
               </div>
               <MenuIcon id="nav-toogle" onClick={() => this.showNavbar()} />

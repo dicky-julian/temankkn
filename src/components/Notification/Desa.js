@@ -4,6 +4,7 @@ import { database, session } from '../../config';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AssignmentReturnedIcon from '@material-ui/icons/AssignmentReturned';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import NotFound from '../../assets/images/home/bg-not-found.png';
 
 class DesaNotification extends Component {
     constructor(props) {
@@ -34,13 +35,14 @@ class DesaNotification extends Component {
         database.ref("solutions/"+id).update({
             "status" : newStatus
         })
-        console.log(newStatus);
     }
 
     getPermasalahan = () => {
         database.ref("problems").orderByChild("idUser").equalTo(session).on("value",
             (snapshot) => {
-                this.setState({ permasalahan: Object.entries(snapshot.val()) })
+                if (snapshot.val() !== null) {
+                    this.setState({ permasalahan: Object.entries(snapshot.val()) })
+                }
             }
         )
     }
@@ -48,7 +50,9 @@ class DesaNotification extends Component {
     getPermintaan = () => {
         database.ref("solutions").orderByChild("idDesa").equalTo(session).on("value",
             (snapshot) => {
-                this.setState({ problems: Object.entries(snapshot.val()) })
+                if (snapshot.val() !== null) {
+                    this.setState({ problems: Object.entries(snapshot.val()) })
+                }
             })
     }
 
@@ -133,19 +137,19 @@ class DesaNotification extends Component {
         }
         
         if (permasalahan.length === 0) {
-            permasalahan = <div>Kosong</div>
+            permasalahan = <span className="not-found-alert" style={{ marginTop: '15vh'}}><img src={NotFound} alt="" /><h3>Tidak ada data yang bisa ditampilkan</h3></span>
         }
 
         if (permintaan.length === 0) {
-            permintaan = <div>Kosong</div>
+            permintaan = <span className="not-found-alert" style={{ marginTop: '15vh'}}><img src={NotFound} alt="" /><h3>Tidak ada data yang bisa ditampilkan</h3></span>
         }
 
         if (berjalan.length === 0) {
-            berjalan = <div>Kosong</div>
+            berjalan = <span className="not-found-alert" style={{ marginTop: '15vh'}}><img src={NotFound} alt="" /><h3>Tidak ada data yang bisa ditampilkan</h3></span>
         }
 
         if (selesai.length === 0) {
-            selesai = <div>Kosong</div>
+            selesai = <span className="not-found-alert" style={{ marginTop: '15vh'}}><img src={NotFound} alt="" /><h3>Tidak ada data yang bisa ditampilkan</h3></span>
         }
 
         return (

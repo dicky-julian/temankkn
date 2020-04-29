@@ -45,7 +45,7 @@ class Home extends Component {
                                     <p>
                                         Masuk pada form pendaftaran, dan daftar sebagai <span>mahasiswa</span>, lalu isi data identitas diri dengan sebenar - benarnya. <br /> Bagaimana mendaftar sebagai <span>desa</span>? ikuti tautan <span onClick={() => this.showSignModal()} className="redirect-link">berikut.</span>
                                     </p>
-                                    <a className="bt bt-secondary" href="/">Daftar Sekarang</a>
+                                    <button className="bt bt-secondary" onClick={() => this.showSignModal()}>Daftar Sekarang</button>
                                 </div>
                             </div>
                             <div className="j-end f-reverse">

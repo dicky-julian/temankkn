@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { database, session } from '../config';
+import { database, session, statusSession } from '../config';
+import { showError } from '../App';
 
 import Add from '@material-ui/icons/Add';
 import Calendar from '@material-ui/icons/CalendarToday';
 import CloseIcon from '@material-ui/icons/Close';
 import Loading from '../assets/images/Infinity.gif';
+import NotFound from '../assets/images/home/bg-not-found.png';
 
 class Permasalahan extends Component {
     constructor(props) {
@@ -27,26 +29,35 @@ class Permasalahan extends Component {
     }
 
     showModal = (idProblem, idDesa, title) => {
-        const modal = document.getElementById("add-solusi");
+        if (statusSession === "desa") {
+            showError("Hanya mahasiswa yang dapat mengirimkan solusi")
+        } else {
+            const modal = document.getElementById("add-solusi");
 
-        modal.style.display = "flex"
-        modal.classList.remove("fade-out");
-        modal.classList.add("fade-in");
+            modal.style.display = "flex";
+            modal.classList.remove("fade-out");
+            modal.classList.add("fade-in");
 
-        document.getElementById("id-permasalahan").value = idProblem;
-        document.getElementById("id-desa").value = idDesa;
-        document.getElementById("problem-title").value = title;
+            document.getElementById("id-permasalahan").value = idProblem;
+            document.getElementById("id-desa").value = idDesa;
+            document.getElementById("problem-title").value = title;
+        }
     }
 
     getProblems = () => {
         var problems = database.ref('problems');
 
         problems.on("value",
-        (snapshot) => {
-            this.setState({ problems: Object.entries(snapshot.val())})
-        }, (err) => {
-            console.log(err)
-        })
+            (snapshot) => {
+                if (snapshot.val() === null) {
+                    const container = document.getElementsByClassName("permasalahan-list")[0];
+                    container.innerHTML = `<span class="not-found-alert"><img src="${NotFound}" alt="" /><h3>Maaf, kami tidak bisa menemukan data</h3></span>`;
+                } else {
+                    this.setState({ problems: Object.entries(snapshot.val()) })
+                }
+            }, (err) => {
+                showError(err)
+            })
     }
 
     createSolution = (e) => {
@@ -59,7 +70,7 @@ class Permasalahan extends Component {
         const title = this.refs.title.value;
 
         if (!idProblem || !description || !date) {
-            console.log('data tidak boleh kosong')
+            showError('data tidak boleh kosong')
         }
 
         const newDate = new Date(date);
@@ -68,7 +79,6 @@ class Permasalahan extends Component {
         const year = newDate.getUTCFullYear();
 
         const datePlan = `${day} / ${month} / ${year}`;
-        console.log(datePlan);
 
         database.ref('solutions/' + session + new Date().getTime()).set({
             idProblem: idProblem,
@@ -80,9 +90,7 @@ class Permasalahan extends Component {
             title: title
         });
 
-        // database.ref("problems/"+idProblem).update({
-        //     "status" : 2
-        // })
+        window.location.href = "/notification";
     }
 
     componentWillMount() {
@@ -95,27 +103,27 @@ class Permasalahan extends Component {
 
         for (let i = 0; i < problems.length; i++) {
             let detailProblem = problems[i][1];
-            
+
             items.push(
-            <div key={i}>
-                <div className="img" style={{ backgroundImage: `url("${detailProblem.imgSource}")` }}></div>
-                <div className="list-content">
-                    <span className="bt bt-secondary">{detailProblem.address}</span>
-                    <a href="/">{detailProblem.title}</a>
-                    <div className="action">
-                        <div className="date">
-                            <Calendar style={{ color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0' }} />
-                            <p>{detailProblem.date}</p>
+                <div key={i}>
+                    <div className="img" style={{ backgroundImage: `url("${detailProblem.imgSource}")` }}></div>
+                    <div className="list-content">
+                        <span className="bt bt-secondary">{detailProblem.address}</span>
+                        <a href={`/permasalahan/single/${problems[i][0]}`}>{detailProblem.title}</a>
+                        <div className="action">
+                            <div className="date">
+                                <Calendar style={{ color: 'rgb(144, 144, 144)', fontSize: '15px', margin: '0 8px -1.5px 0' }} />
+                                <p>{detailProblem.date}</p>
+                            </div>
+                            <button className="bt bt-primary" onClick={() => this.showModal(problems[i][0], detailProblem.idUser, detailProblem.title)}><Add style={{ fontSize: '15px', margin: '0 8px 1px 0' }} /> Beri Solusi</button>
                         </div>
-                        <button className="bt bt-primary" onClick={() => this.showModal(problems[i][0], detailProblem.idUser, detailProblem.title)}><Add style={{ fontSize: '15px', margin: '0 8px 1px 0' }} /> Beri Solusi</button>
                     </div>
                 </div>
-            </div>
             )
         }
 
         if (items.length === 0) {
-            items = <img className="loading" src={Loading} style={{ margin: '3em auto 3em' }} />
+            items = <img className="loading" src={Loading} style={{ margin: '3em auto 3em' }} alt="" />
         }
 
         return (
@@ -123,7 +131,7 @@ class Permasalahan extends Component {
                 <div className="search">
                     <div className="search-title">
                         <h2>Temukan Permasalahan</h2>
-                        <h4><span>144</span> hasil ditampilkan</h4>
+                        <h4><span id="">{items.length} </span> hasil ditampilkan</h4>
                     </div>
                 </div>
                 <div className="permasalahan-list">

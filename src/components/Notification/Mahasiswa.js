@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { database, session } from '../../config';
+
 import AssignmentIcon from '@material-ui/icons/Assignment';
-import AssignmentReturnedIcon from '@material-ui/icons/AssignmentReturned';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import ClearIcon from '@material-ui/icons/Clear';
-import Loading from '../../assets/images/Infinity.gif';
+
+import NotFound from '../../assets/images/home/bg-not-found.png';
 
 class MahasiswaNotification extends Component {
     constructor(props) {
@@ -19,8 +20,9 @@ class MahasiswaNotification extends Component {
     getPermintaan = () => {
         database.ref("solutions").orderByChild("idUser").equalTo(session).on("value",
             (snapshot) => {
-                this.setState({ problems: Object.entries(snapshot.val()) })
-                console.log(snapshot);
+                if (snapshot.val() !== null) {
+                    this.setState({ problems: Object.entries(snapshot.val()) })
+                }
             })
     }
 
@@ -49,7 +51,7 @@ class MahasiswaNotification extends Component {
                             <p>
                                 {detailProblems.description}
                                 <br /><br />
-                                <b>NB : Kegiatan akan dilaksanakan pada ${detailProblems.date}</b>
+                                <b>NB : Kegiatan akan dilaksanakan pada {detailProblems.date}</b>
                             </p>
                         </div>
                     )
@@ -64,7 +66,7 @@ class MahasiswaNotification extends Component {
                         </div>
                     )
                     break;
-                case 3:
+                case 4:
                     ditolak.push(
                         <div className="container" key={i}>
                             <div className="title">
@@ -74,7 +76,7 @@ class MahasiswaNotification extends Component {
                         </div>
                     )
                     break;
-                case 4:
+                case 3:
                     selesai.push(
                         <div className="container" key={i}>
                             <div className="title">
@@ -88,21 +90,23 @@ class MahasiswaNotification extends Component {
                     break;
             }
         }
+
         if (permintaan.length === 0) {
-            permintaan = <img className="loading" src={Loading} />
+            permintaan = <span className="not-found-alert" style={{ marginTop: '15vh'}}><img src={NotFound} alt="" /><h3>Tidak ada data yang bisa ditampilkan</h3></span>
         }
 
         if (disetujui.length === 0) {
-            disetujui = <img className="loading" src={Loading} />
+            disetujui = <span className="not-found-alert" style={{ marginTop: '15vh'}}><img src={NotFound} alt="" /><h3>Tidak ada data yang bisa ditampilkan</h3></span>
         }
 
         if (ditolak.length === 0) {
-            ditolak = <img className="loading" src={Loading} />
+            ditolak = <span className="not-found-alert" style={{ marginTop: '15vh'}}><img src={NotFound} alt="" /><h3>Tidak ada data yang bisa ditampilkan</h3></span>
         }
 
         if (selesai.length === 0) {
-            selesai = <img className="loading" src={Loading} />
+            selesai = <span className="not-found-alert" style={{ marginTop: '15vh'}}><img src={NotFound} alt="" /><h3>Tidak ada data yang bisa ditampilkan</h3></span>
         }
+
 
         return (
             <div>

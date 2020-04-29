@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { database, storage, session, addressSession } from '../config';
+import { showError } from '../App';
 
 import HeaderImg from '../assets/images/permasalahan/bg-permasalahan-add.png'
 import Image from '@material-ui/icons/Image';
@@ -18,7 +19,7 @@ class FormPermasalahan extends Component {
 
     handleImageAsFile = (e) => {
         const image = e.target.files[0];
-        console.log(image);
+
         this.setState({imageAsFile: image});
     }
 
@@ -31,7 +32,7 @@ class FormPermasalahan extends Component {
         const description = this.refs.description.value;
 
         if (imageAsFile === '') {
-            console.error('not an image')
+            showError('Permasalahan harus menyertakan gambar')
         }
 
         const timeNow = new Date().getTime();
@@ -39,14 +40,13 @@ class FormPermasalahan extends Component {
 
         uploadTask.on('state_changed',
             (snapshot) => {
-                console.log(snapshot)
             }, (err) => {
-                console.log(err)
+                showError(err)
             }, () => {
                 storage.ref(`/images/${timeNow}`).child(imageAsFile.name).getDownloadURL()
                     .then(firebaseUrl => {
                         if (!address || !title || !description) {
-                            console.log('data tidak boleh kosong');
+                            showError('Data tidak boleh kosong');
                             return '';
                         }
                 
@@ -59,10 +59,10 @@ class FormPermasalahan extends Component {
                             date: `${new Date().getDate()} ${this.state.month[new Date().getMonth()]}`,
                             status: 1
                         })
-
+                        window.location.href = "/notification";
 
                     }).catch(function (error) {
-                        console.log(error);
+                        showError(error);
                     }) 
             }
         )

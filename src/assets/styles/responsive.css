@@ -223,9 +223,16 @@
     .loading {
         width: 8em;
     }
+    .not-found-alert img {
+        width: 15em;
+    }
+    .not-found-alert h3 {
+        font-size: 16px;
+    }
     /* Navbar */
     .nav-link {
         top: 61px;
+        height: calc(100% - 60px);
     }
     .dropdown {
         top: 60px;
@@ -251,7 +258,7 @@
     }
     
     /* Permasalahan */
-    .article-container>a {
+    .article-container>button {
         width: -webkit-fill-available;
     }
     #sign .form, #add-solusi .form {

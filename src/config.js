@@ -1,5 +1,6 @@
 import firebase from 'firebase';
 import "firebase/auth";
+import { showError } from './App';
 
 var firebaseInitialize = {
     apiKey: "AIzaSyD-eMjoURAtrpfJKncCA02A4mP4hLkCDXM",
@@ -35,7 +36,7 @@ export const createSession = (uid, status, address) => {
 // SIGNIN
 export const getAuth = (dataUser) => {
     auth.signInWithEmailAndPassword(dataUser.email, dataUser.password).catch(function (error) {
-        console.log(error.message);
+        showError(error.message);
     });
 
     auth.onAuthStateChanged(function (user) {
@@ -45,14 +46,14 @@ export const getAuth = (dataUser) => {
             ref.on("value", function (snapshot) {
                 createSession(user.uid, snapshot.val().status, snapshot.val().address);
                 auth.signOut().then(function () {
-                    console.log("success logout");
+
                 }).catch(function (error) {
-                    console.log(error);
+                    showError(error);
                 });
 
                 window.location.href = "/";
             }, function (err) {
-                console.log("The read failed: " + err.code);
+                showError("Gagal dalam memproses, " + err.code);
             });
         }
         
@@ -62,13 +63,11 @@ export const getAuth = (dataUser) => {
 // SIGNUP
 export const createAuth = (dataUser) => {
     auth.createUserWithEmailAndPassword(dataUser.email, dataUser.password).catch(function (error) {
-        console.log(error.message);
+        showError(error.message);
     });
 
     auth.onAuthStateChanged(function (user) {
         if (user != null) {
-            console.log(user);
-
             database.ref('users/' + user.uid).set({
                 username: dataUser.username,
                 email: dataUser.email,
@@ -79,9 +78,9 @@ export const createAuth = (dataUser) => {
 
             createSession(user.uid, dataUser.status, dataUser.address);
             auth.signOut().then(function () {
-                console.log("success logout");
+
             }).catch(function (error) {
-                console.log(error);
+                showError(error);
             });
 
             window.location.href = "/";
@@ -92,6 +91,5 @@ export const createAuth = (dataUser) => {
 // LOGOUT
 export const logoutAuth = () => {
     window.localStorage.clear();
-    console.log('session dihapus');
     window.location.href = "/";
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getAuth, createAuth } from '../config';
+import { showError } from '../App';
 import CloseIcon from '@material-ui/icons/Close';
 
 class Sign extends Component {
@@ -12,7 +13,7 @@ class Sign extends Component {
         }
 
         if (!dataUser.email || !dataUser.password) {
-            console.log('data tidak boleh');
+            showError('Data tidak boleh kosong');
             return '';
             // redirect with alert
         }
@@ -32,7 +33,7 @@ class Sign extends Component {
         }
 
         if (!dataUser.username || !dataUser.email || !dataUser.password || !dataUser.address) {
-            console.log('data tidak boleh');
+            showError('Data tidak boleh kosong');
             return '';
             // redirect with alert
         }
@@ -50,10 +51,9 @@ class Sign extends Component {
             address : this.refs.addressDesa.value,
             status: "desa"
         }
-        console.log(dataUser);
 
         if (!dataUser.username || !dataUser.email || !dataUser.password || !dataUser.address) {
-            console.log('data tidak boleh');
+            showError('Data tidak boleh kosong');
             return '';
             // redirect with alert
         }
