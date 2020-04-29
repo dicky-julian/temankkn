@@ -172,6 +172,12 @@ body {
     margin: 0;
 }
 
+.loading {
+    display: block;
+    width: 11em;
+    margin: 30vh auto 0;
+}
+
 /* navbar */
 nav {
     position: fixed;
@@ -1020,12 +1026,12 @@ hr.divider:after {
 
 .show-notification {
     width: 100%;
+    min-height: 100vh;
     background: #f6f5f8;
 }
 
 .show-notification > div {
     width: 90%;
-    height: 100vh;
     padding: 5%;
 }
 
