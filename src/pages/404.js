@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
 
 class Error404 extends Component {
     componentDidMount() {
@@ -9,11 +8,9 @@ class Error404 extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div id="error404">
                 <h1>404</h1>
-                <p>
-                    <Link to="/">Bapak mana</Link> Oye Oye
-                </p>
+                <a href="/" className="bt bt-primary">Kembali ke beranda</a>
             </div>
         )
     }

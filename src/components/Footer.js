@@ -11,7 +11,7 @@ export default function Footer() {
             <div>
                 <h6>KawanKKN</h6>
                 <a href="https://www.linkedin.com/in/dicky-julian/">Developer</a>
-                <a href="https://www.github.com/in/dicky-julian/">Dokumentasi</a>
+                <a href="https://github.com/dicky-julian/temankkn">Dokumentasi</a>
             </div>
 
             <div>

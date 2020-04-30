@@ -1209,3 +1209,16 @@ footer a:hover {
 .footer-logo {
     width: 30%;
 }
+
+#error404 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#error404 h1 {
+    margin: 0 0 20px;
+    font-size: 10em;
+}
