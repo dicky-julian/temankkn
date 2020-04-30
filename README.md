@@ -16,3 +16,7 @@ Open [https://kawan-kkn.web.app/](https://kawan-kkn.web.app/) to view it in the 
 #### `documentation `
 
 Open [https://docs.google.com/document/d/1anndms39c86hu0YqD264nN3xRzCjwi5DoU28fcZNejg/edit?usp=sharing](https://docs.google.com/document/d/1anndms39c86hu0YqD264nN3xRzCjwi5DoU28fcZNejg/edit?usp=sharing)
+
+atau 
+
+[https://docs.google.com/document/d/e/2PACX-1vQs2LKuGnlDZgNGHJsqsI5Cdzhn0DJ3wHf6fxfjQjPlPSzw4sOT942gGby--RhtyGnJKKjSDT4ASo8W/pub](https://docs.google.com/document/d/e/2PACX-1vQs2LKuGnlDZgNGHJsqsI5Cdzhn0DJ3wHf6fxfjQjPlPSzw4sOT942gGby--RhtyGnJKKjSDT4ASo8W/pub)
