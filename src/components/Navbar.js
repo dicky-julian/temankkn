@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { session, statusSession, logoutAuth } from '../config';
 import { showError } from '../App';
 
-import logoImg from '../assets/images/teman-kkn-logo.png';
+import logoImg from '../assets/images/teman-kkn-logo.webp';
 import PersonIcon from '@material-ui/icons/Person';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';

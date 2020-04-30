@@ -4,7 +4,7 @@ import { database, session } from '../../config';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import AssignmentReturnedIcon from '@material-ui/icons/AssignmentReturned';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
-import NotFound from '../../assets/images/home/bg-not-found.png';
+import NotFound from '../../assets/images/home/bg-not-found.webp';
 
 class DesaNotification extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ class DesaNotification extends Component {
         }
     }
 
-    updateStatus = (id, status) => {
+    updateStatus = (id, status, idProblem) => {
         let newStatus = '';
         switch (status) {
             case 1:
@@ -24,6 +24,9 @@ class DesaNotification extends Component {
                 break;
             case 2:
                 newStatus = 3;
+                database.ref("problems/"+idProblem).update({
+                    "status" : 0
+                })
                 break;
             case 3:
                 newStatus = 4;
@@ -116,7 +119,7 @@ class DesaNotification extends Component {
                                 <h6>{detailProblems.title}</h6>
                             </div>
                             <div className="button-container">
-                                <button className="bt bt-primary accept" onClick={() => { this.updateStatus(problems[i][0], 2) }}>Selesai</button>
+                                <button className="bt bt-primary accept" onClick={() => { this.updateStatus(problems[i][0], 2, detailProblems.idProblem) }}>Selesai</button>
                             </div>
                         </div>
                     )

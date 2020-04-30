@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-import headerImg from '../assets/images/home/bg-home-header.png'
-import stepLogin from '../assets/images/home/step-login.png'
-import stepProblem from '../assets/images/home/step-problem.png'
-import stepSolution from '../assets/images/home/step-solution.png'
-import benefitImg from '../assets/images/home/bg-benefit.png'
+import headerImg from '../assets/images/home/bg-home-header.webp'
+import stepLogin from '../assets/images/home/step-login.webp'
+import stepProblem from '../assets/images/home/step-problem.webp'
+import stepSolution from '../assets/images/home/step-solution.webp'
+import benefitImg from '../assets/images/home/bg-benefit.webp'
 
 import CheckCircle from '@material-ui/icons/CheckCircle';
 
@@ -23,7 +23,8 @@ class Home extends Component {
                 <header>
                     <div>
                         <h1>Inovasi Untuk Solusi</h1>
-                        <p>The friendly and free way for fans to support your work for the price of a coffee. Get paid directly with 0% fees from Ko-fi.</p>
+                        {/* <p>The friendly and free way for fans to support your work for the price of a coffee. Get paid directly with 0% fees from Ko-fi.</p> */}
+                        <p>Ciptakan inovasi dari setiap peluang yang ada, dan biarlah inovasi itu menjadi solusi bagi orang disekitarmu.</p>
                         <a href="/permasalahan" className="bt bt-primary">Temukan Permasalahan</a>
                     </div>
                     <img src={headerImg} alt="" />

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { database, storage, session, addressSession } from '../config';
 import { showError } from '../App';
 
-import HeaderImg from '../assets/images/permasalahan/bg-permasalahan-add.png'
+import HeaderImg from '../assets/images/permasalahan/bg-permasalahan-add.webp'
 import Image from '@material-ui/icons/Image';
 
 class FormPermasalahan extends Component {

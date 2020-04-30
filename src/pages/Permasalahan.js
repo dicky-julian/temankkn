@@ -6,7 +6,7 @@ import Add from '@material-ui/icons/Add';
 import Calendar from '@material-ui/icons/CalendarToday';
 import CloseIcon from '@material-ui/icons/Close';
 import Loading from '../assets/images/Infinity.gif';
-import NotFound from '../assets/images/home/bg-not-found.png';
+import NotFound from '../assets/images/home/bg-not-found.webp';
 
 class Permasalahan extends Component {
     constructor(props) {
@@ -45,7 +45,7 @@ class Permasalahan extends Component {
     }
 
     getProblems = () => {
-        var problems = database.ref('problems');
+        var problems = database.ref('problems').orderByChild("status").equalTo(1);
 
         problems.on("value",
             (snapshot) => {

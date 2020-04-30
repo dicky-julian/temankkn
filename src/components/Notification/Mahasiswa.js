@@ -5,7 +5,7 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import ClearIcon from '@material-ui/icons/Clear';
 
-import NotFound from '../../assets/images/home/bg-not-found.png';
+import NotFound from '../../assets/images/home/bg-not-found.webp';
 
 class MahasiswaNotification extends Component {
     constructor(props) {

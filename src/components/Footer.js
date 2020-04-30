@@ -1,5 +1,5 @@
 import React from 'react'
-import logoImg from '../assets/images/teman-kkn-logo.png'
+import logoImg from '../assets/images/teman-kkn-logo.webp'
 
 export default function Footer() {
     return (
