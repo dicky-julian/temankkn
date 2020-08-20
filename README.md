@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://kawan-kkn.web.app/">
-    <img src="https://kawan-kkn.web.app/static/media/teman-kkn-logo.e1c30027.webp" alt="Logo" width="280" height="80">
+    <img src="https://kawan-kkn.web.app/static/media/teman-kkn-logo.e1c30027.webp" alt="Logo" width="280" height="200">
   </a>
 
   <p align="center">
@@ -44,7 +44,6 @@ To try the apps, you must follow the simple example steps below.
 
 ### Installation
 
-<<<<<<< HEAD
 1. Clone the repo
 
 ```sh
@@ -72,20 +71,12 @@ npm start
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-=======
-Open [https://kawan-kkn.web.app/](https://kawan-kkn.web.app/) for live demo.
->>>>>>> 84edfe2ca914b8212e2a9f3f5e5352e807bb2575
 
 #### `documentation `
 
 Open [https://docs.google.com/document/d/1anndms39c86hu0YqD264nN3xRzCjwi5DoU28fcZNejg/edit?usp=sharing](https://docs.google.com/document/d/1anndms39c86hu0YqD264nN3xRzCjwi5DoU28fcZNejg/edit?usp=sharing)
 
 OR 
-<<<<<<< HEAD
 
 [https://docs.google.com/document/d/e/2PACX-1vQs2LKuGnlDZgNGHJsqsI5Cdzhn0DJ3wHf6fxfjQjPlPSzw4sOT942gGby--RhtyGnJKKjSDT4ASo8W/pub](https://docs.google.com/document/d/e/2PACX-1vQs2LKuGnlDZgNGHJsqsI5Cdzhn0DJ3wHf6fxfjQjPlPSzw4sOT942gGby--RhtyGnJKKjSDT4ASo8W/pub)
 
-=======
-
-[https://docs.google.com/document/d/e/2PACX-1vQs2LKuGnlDZgNGHJsqsI5Cdzhn0DJ3wHf6fxfjQjPlPSzw4sOT942gGby--RhtyGnJKKjSDT4ASo8W/pub](https://docs.google.com/document/d/e/2PACX-1vQs2LKuGnlDZgNGHJsqsI5Cdzhn0DJ3wHf6fxfjQjPlPSzw4sOT942gGby--RhtyGnJKKjSDT4ASo8W/pub)
->>>>>>> 84edfe2ca914b8212e2a9f3f5e5352e807bb2575
