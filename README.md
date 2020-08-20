@@ -11,12 +11,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 #### `demo `
 
-Open [https://kawan-kkn.web.app/](https://kawan-kkn.web.app/) to view it in the browser.
+Open [https://kawan-kkn.web.app/](https://kawan-kkn.web.app/) for live demo.
 
 #### `documentation `
 
 Open [https://docs.google.com/document/d/1anndms39c86hu0YqD264nN3xRzCjwi5DoU28fcZNejg/edit?usp=sharing](https://docs.google.com/document/d/1anndms39c86hu0YqD264nN3xRzCjwi5DoU28fcZNejg/edit?usp=sharing)
 
-atau 
+OR 
 
 [https://docs.google.com/document/d/e/2PACX-1vQs2LKuGnlDZgNGHJsqsI5Cdzhn0DJ3wHf6fxfjQjPlPSzw4sOT942gGby--RhtyGnJKKjSDT4ASo8W/pub](https://docs.google.com/document/d/e/2PACX-1vQs2LKuGnlDZgNGHJsqsI5Cdzhn0DJ3wHf6fxfjQjPlPSzw4sOT942gGby--RhtyGnJKKjSDT4ASo8W/pub)
