@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://kawan-kkn.web.app/">
-    <img src="https://kawan-kkn.web.app/static/media/teman-kkn-logo.e1c30027.webp" alt="Logo" width="280" height="200">
+    <img src="https://kawan-kkn.web.app/static/media/teman-kkn-logo.e1c30027.webp" alt="Logo" width="200" height="200">
   </a>
 
   <p align="center">
