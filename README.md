@@ -31,18 +31,6 @@ KawanKKN adalah platform digital yang bertujuan untuk memudahkan mahasiswa dalam
 - [React Native](https://reactjs.org)
 - [Firebase](http://firebase.com)
 
-## Screenshots
-
-<div align="center">
-    <img width="400" src="https://raw.githubusercontent.com/dicky-julian/Temankkn/master/src/assets/images/screenshoot/screeshot_1.jpg">
-    <img width="400" src="https://raw.githubusercontent.com/dicky-julian/Temankkn/master/src/assets/images/screenshoot/screeshot_2.jpg">
-</div>
-
-<div align="center">
-    <img width="400" src="https://raw.githubusercontent.com/dicky-julian/Temankkn/master/src/assets/images/screenshoot/screeshot_3.jpg">
-    <img width="400" src="https://raw.githubusercontent.com/dicky-julian/Temankkn/master/src/assets/images/screenshoot/screeshot_4.jpg">
-</div>
-
 ## Getting Started
 
 To try the apps, you must follow the simple example steps below.
@@ -90,3 +78,14 @@ OR
 
 [https://docs.google.com/document/d/e/2PACX-1vQs2LKuGnlDZgNGHJsqsI5Cdzhn0DJ3wHf6fxfjQjPlPSzw4sOT942gGby--RhtyGnJKKjSDT4ASo8W/pub](https://docs.google.com/document/d/e/2PACX-1vQs2LKuGnlDZgNGHJsqsI5Cdzhn0DJ3wHf6fxfjQjPlPSzw4sOT942gGby--RhtyGnJKKjSDT4ASo8W/pub)
 
+## Screenshots
+
+<div align="center">
+    <img width="400" src="https://raw.githubusercontent.com/dicky-julian/Temankkn/master/src/assets/images/screenshoot/screeshot_1.jpg">
+    <img width="400" src="https://raw.githubusercontent.com/dicky-julian/Temankkn/master/src/assets/images/screenshoot/screeshot_2.jpg">
+</div>
+
+<div align="center">
+    <img width="400" src="https://raw.githubusercontent.com/dicky-julian/Temankkn/master/src/assets/images/screenshoot/screeshot_3.jpg">
+    <img width="400" src="https://raw.githubusercontent.com/dicky-julian/Temankkn/master/src/assets/images/screenshoot/screeshot_4.jpg">
+</div>
