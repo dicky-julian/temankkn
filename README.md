@@ -28,7 +28,7 @@ KawanKKN adalah platform digital yang bertujuan untuk memudahkan mahasiswa dalam
 
 ### Built With
 
-- [React Native](https://reactjs.org)
+- [React JS](https://reactjs.org)
 - [Firebase](http://firebase.com)
 
 ## Getting Started
